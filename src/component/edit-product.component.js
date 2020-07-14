@@ -85,6 +85,8 @@ export default class EditProduct extends Component {
       if (isValid) {
         console.log(this.state);
         this.setState(initialState);
+        alert('Product edited successfully')
+        window.location.assign("/");
       }
 
 
@@ -92,7 +94,6 @@ export default class EditProduct extends Component {
 
     axios.post('http://localhost:3000/product/update/' + this.props.match.params.id, productDetail)
     .then(res => console.log(res.data));
- 
   }
 
 

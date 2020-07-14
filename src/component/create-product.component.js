@@ -71,13 +71,15 @@ export default class CreateProduct extends Component {
       if (isValid) {
         console.log(this.state);
         this.setState(initialState);
+        alert('Product added');
+        window.location.assign("/");
       }
-
 
     console.log(productDetail);
 
     axios.post('http://localhost:3000/product/add',productDetail)
     .then(res => console.log(res.data));
+
   }
 
 
